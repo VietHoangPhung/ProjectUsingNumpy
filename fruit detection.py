@@ -20,7 +20,7 @@ shape = (1, 224, 224, 3)
 data  = np.ndarray(shape, dtype=np.float32)
 
 # Replace this with the path to your image
-image_name = 'single-banana.jpg'
+image_name = 'lemons2.jpg'
 image = Image.open(image_name)
 
 #resize the image to a 224x224 with the same strategy as in TM2:
