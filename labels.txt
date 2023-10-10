@@ -1,5 +1,6 @@
-0 Red Apple
-1 Banana
-2 Lemon
-3 Orange
-4 Strawberry
+Apple
+Banana 
+Lime
+Orange 
+Strawberry
+test

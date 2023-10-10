@@ -51,15 +51,23 @@ while 1:
     prediction = model.predict(data)
     print(prediction)
 
-    index = np.argmax(prediction)
-    #print(index)
-    class_name = class_name[index]
+    if(np.max(prediction) < 0.7):
+        
+        image = cv2.imread(image_name)
+        height, width, process = image.shape
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        cv2.putText(image, "none", (20, 30), font, 1, (0, 255, 0), 1, cv2.LINE_AA)
+    else:
+        index = np.argmax(prediction) 
+        class_name = class_name[index]
+        index = np.argmax(prediction)
+        #print(index)
 
-    print("Class Name : ", class_name)
-    image = cv2.imread(image_name)
-    height, width, process = image.shape
-    font = cv2.FONT_HERSHEY_SIMPLEX
-    cv2.putText(image, class_name, (20, 30), font, 1, (0, 255, 0), 1, cv2.LINE_AA)
+        print("Class Name : ", class_name)
+        image = cv2.imread(image_name)
+        height, width, process = image.shape
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        cv2.putText(image, class_name, (20, 30), font, 1, (0, 255, 0), 1, cv2.LINE_AA)
 
     cv2.imshow("Image", image)
     k = cv2.waitKey(30) & 0xff
